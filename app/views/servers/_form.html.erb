@@ -35,6 +35,11 @@
     <%= f.label :database_type %><br>
     <%= f.text_field :database_type %>
   </div>
+
+  <div class="field">
+    <%= f.label :host_id %><br>
+    <%= f.select :host_id, Host.pluck(:name, :id) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
