@@ -69,6 +69,6 @@ class ServersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def server_params
-      params.require(:server).permit(:name, :url, :ip_address, :username, :password, :database_type)
+      params.require(:server).permit(:name, :url, :ip_address, :username, :password, :database_type, :host_id)
     end
 end
