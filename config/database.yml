@@ -52,4 +52,3 @@ test:
 production:
   <<: *default
   database: website_locator_production
-  host: 192.168.0.16
