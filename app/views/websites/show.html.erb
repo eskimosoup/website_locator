@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @website.name %>
+</p>
+
+<p>
+  <strong>Server:</strong>
+  <%= @website.server %>
+</p>
+
+<p>
+  <strong>Ssh username:</strong>
+  <%= @website.ssh_username %>
+</p>
+
+<p>
+  <strong>Ssh password:</strong>
+  <%= @website.ssh_password %>
+</p>
+
+<p>
+  <strong>Local url one:</strong>
+  <%= @website.local_url_one %>
+</p>
+
+<p>
+  <strong>Local url two:</strong>
+  <%= @website.local_url_two %>
+</p>
+
+<p>
+  <strong>Live url:</strong>
+  <%= @website.live_url %>
+</p>
+
+<p>
+  <strong>Secret key:</strong>
+  <%= @website.secret_key %>
+</p>
+
+<p>
+  <strong>Database password:</strong>
+  <%= @website.database_password %>
+</p>
+
+<p>
+  <strong>Ruby version:</strong>
+  <%= @website.ruby_version %>
+</p>
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>

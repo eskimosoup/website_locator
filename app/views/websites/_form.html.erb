@@ -1,0 +1,57 @@
+<%= form_for(@website) do |f| %>
+  <% if @website.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@website.errors.count, "error") %> prohibited this website from being saved:</h2>
+
+      <ul>
+      <% @website.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :server_id %><br>
+    <%= f.text_field :server_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ssh_username %><br>
+    <%= f.text_field :ssh_username %>
+  </div>
+  <div class="field">
+    <%= f.label :ssh_password %><br>
+    <%= f.text_field :ssh_password %>
+  </div>
+  <div class="field">
+    <%= f.label :local_url_one %><br>
+    <%= f.text_field :local_url_one %>
+  </div>
+  <div class="field">
+    <%= f.label :local_url_two %><br>
+    <%= f.text_field :local_url_two %>
+  </div>
+  <div class="field">
+    <%= f.label :live_url %><br>
+    <%= f.text_field :live_url %>
+  </div>
+  <div class="field">
+    <%= f.label :secret_key %><br>
+    <%= f.text_field :secret_key %>
+  </div>
+  <div class="field">
+    <%= f.label :database_password %><br>
+    <%= f.text_field :database_password %>
+  </div>
+  <div class="field">
+    <%= f.label :ruby_version %><br>
+    <%= f.text_field :ruby_version %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

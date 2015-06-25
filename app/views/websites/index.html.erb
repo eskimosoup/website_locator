@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Websites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Server</th>
+      <th>Ssh username</th>
+      <th>Ssh password</th>
+      <th>Local url one</th>
+      <th>Local url two</th>
+      <th>Live url</th>
+      <th>Secret key</th>
+      <th>Database password</th>
+      <th>Ruby version</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @websites.each do |website| %>
+      <tr>
+        <td><%= website.name %></td>
+        <td><%= website.server %></td>
+        <td><%= website.ssh_username %></td>
+        <td><%= website.ssh_password %></td>
+        <td><%= website.local_url_one %></td>
+        <td><%= website.local_url_two %></td>
+        <td><%= website.live_url %></td>
+        <td><%= website.secret_key %></td>
+        <td><%= website.database_password %></td>
+        <td><%= website.ruby_version %></td>
+        <td><%= link_to 'Show', website %></td>
+        <td><%= link_to 'Edit', edit_website_path(website) %></td>
+        <td><%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Website', new_website_path %>
