@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625092456) do
+ActiveRecord::Schema.define(version: 20150625102415) do
+
+  create_table "hosts", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "url",        limit: 255
+    t.string   "username",   limit: 255
+    t.string   "password",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "servers", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -22,7 +31,10 @@ ActiveRecord::Schema.define(version: 20150625092456) do
     t.string   "database_type", limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "host_id",       limit: 4
   end
+
+  add_index "servers", ["host_id"], name: "index_servers_on_host_id", using: :btree
 
   create_table "websites", force: :cascade do |t|
     t.string   "name",              limit: 255
@@ -41,5 +53,6 @@ ActiveRecord::Schema.define(version: 20150625092456) do
 
   add_index "websites", ["server_id"], name: "index_websites_on_server_id", using: :btree
 
+  add_foreign_key "servers", "hosts"
   add_foreign_key "websites", "servers"
 end

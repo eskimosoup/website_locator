@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @host.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @host.url %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @host.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @host.password %>
+</p>
+
+<%= link_to 'Edit', edit_host_path(@host) %> |
+<%= link_to 'Back', hosts_path %>
