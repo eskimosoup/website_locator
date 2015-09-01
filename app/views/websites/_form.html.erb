@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :server_id %><br>
-    <%= f.text_field :server_id %>
+    <%= f.select :server_id, Server.order(name: :asc).pluck(:name, :id) %>
   </div>
   <div class="field">
     <%= f.label :ssh_username %><br>
