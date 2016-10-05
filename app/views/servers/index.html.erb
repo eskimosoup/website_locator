@@ -22,7 +22,7 @@
         <td><%= server.url %></td>
         <td><%= server.ip_address %></td>
         <td><%= server.username %></td>
-        <td><%= text_area_tag :password, server.password.strip %></td>
+        <td><%= text_area_tag :password, server.password.strip, readonly: true %></td>
         <td><%= server.database_type %></td>
         <td><%= link_to 'Show', server %></td>
         <td><%= link_to 'Edit', edit_server_path(server) %></td>
