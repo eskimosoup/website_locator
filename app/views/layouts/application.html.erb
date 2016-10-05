@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <%= render "layouts/head" %>
-  <%= render "layouts/header" %>
+
   <body>
-    <%= yield %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render "layouts/header" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
