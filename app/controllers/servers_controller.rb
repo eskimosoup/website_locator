@@ -8,7 +8,7 @@ class ServersController < ApplicationController
   end
 
   def all
-    @servers = Server.all
+    @servers = Server.where.not(active: true)
     render 'servers/index'
   end
 
