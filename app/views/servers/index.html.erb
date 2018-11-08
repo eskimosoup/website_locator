@@ -6,11 +6,11 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
-      <th>Ip address</th>
+      <th>URL</th>
+      <th>IP Address</th>
       <th>Username</th>
       <th>Password</th>
-      <th>Database type</th>
+      <!-- <th>Database type</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +19,11 @@
     <% @servers.each do |server| %>
       <tr>
         <td><%= server.name %></td>
-        <td><%= server.url %></td>
+        <td><%= link_to server.url, server.url, target: '_blank', rel: 'noopener' %></td>
         <td><%= server.ip_address %></td>
         <td><%= server.username %></td>
         <td><%= text_area_tag :password, server.password.strip, readonly: true %></td>
-        <td><%= server.database_type %></td>
+        <!-- <td><%= server.database_type %></td> -->
         <td><%= link_to 'Show', server %></td>
         <td><%= link_to 'Edit', edit_server_path(server) %></td>
         <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
