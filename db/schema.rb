@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625102415) do
+ActiveRecord::Schema.define(version: 20181108092755) do
 
   create_table "hosts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20150625102415) do
     t.string   "username",      limit: 255
     t.string   "password",      limit: 255
     t.string   "database_type", limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "host_id",       limit: 4
+    t.boolean  "active",                    default: true
   end
 
   add_index "servers", ["host_id"], name: "index_servers_on_host_id", using: :btree
